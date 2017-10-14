@@ -29,4 +29,4 @@ install unzip
 install htop
 install openjdk-8-jre
 install openjdk-8-jdk
-
+install python-autopep8
