@@ -19,6 +19,7 @@ install git
 install curl
 install trash-cli
 install terminator
+install caffeine
 install tree
 install sqlitebrowser 
 install meld
@@ -28,3 +29,4 @@ install unzip
 install htop
 install openjdk-8-jre
 install openjdk-8-jdk
+
