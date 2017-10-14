@@ -19,10 +19,10 @@ install git
 install curl
 install trash-cli
 install terminator
+install tree
 install sqlitebrowser 
 install meld
 install gimp
 install gthumb 
 install unzip
 install htop
-
