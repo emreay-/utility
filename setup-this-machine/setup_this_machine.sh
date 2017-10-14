@@ -26,3 +26,5 @@ install gimp
 install gthumb 
 install unzip
 install htop
+install openjdk-8-jre
+install openjdk-8-jdk
