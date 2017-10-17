@@ -1,4 +1,4 @@
-alias la='ls -AlF'
+alias la="ls -AlF"
 alias rm="trash"
 alias dclk="xdg-open"
 alias py="python"

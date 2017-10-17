@@ -83,7 +83,7 @@ if [ "$ARG" == "dep" ]; then
   install_list DEPENDENCIES
 elif [ "$ARG" == "ros" ]; then
   install_ros
-elif [ "$ARG" == "anaconda_only" ]; then
+elif [ "$ARG" == "anaconda" ]; then
   install_anaconda
 elif [ "$ARG" == "shell" ]; then
   install_list DEPENDENCIES
