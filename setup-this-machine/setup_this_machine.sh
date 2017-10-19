@@ -32,6 +32,7 @@ install_atom () {
     printc $yellow "\nProcess: Install Atom...\n"
     wget -O $HOME/Downloads/atom.deb https://atom.io/download/deb
     sudo dpkg --install $HOME/Downloads/atom.deb
+    apm install minimap
 }
 
 install_vscode () {
