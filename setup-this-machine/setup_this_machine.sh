@@ -85,6 +85,10 @@ elif [ "$ARG" == "ros" ]; then
   install_ros
 elif [ "$ARG" == "anaconda" ]; then
   install_anaconda
+elif [ "$ARG" == "atom" ]; then
+  install_atom
+elif [ "$ARG" == "vscode" ]; then
+  install_vscode
 elif [ "$ARG" == "shell" ]; then
   install_list DEPENDENCIES
   customize_shrc
