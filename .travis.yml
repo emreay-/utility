@@ -1,0 +1,15 @@
+dist: 
+  - trusty
+sudo: required
+language:
+  - generic
+cache:
+  - apt
+
+
+before_install:
+  - echo "CI pre install"
+  
+
+script:
+  - ./setup-this-machine.sh dep
