@@ -15,4 +15,4 @@ script:
   - pwd
   - ls
   - cd setup-this-machine
-  - ./setup_this_machine.sh dep
+  - ./setup_this_machine.sh full
