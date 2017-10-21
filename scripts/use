@@ -1,0 +1,21 @@
+#!/bin/bash
+# -*- coding: utf-8 -*-
+
+#
+# Emre Ay - 21/10/2017
+#
+
+# Simple script to determine which python binary to use
+# Usage: eval `use <argument>` assuming that script has permissions
+# and PATH variable is set appropriately (or script is copied to /usr/bin/)
+# It is not very elegant, but does the job.
+
+arg=$1
+
+if [ "$arg" == "anaconda3" ]; then
+  echo "export PATH=$HOME/anaconda3/bin:$PATH"
+elif [ "$arg" == "def" ]; then
+  echo "export PATH=/usr/local/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+else
+  echo "Accepted arguments: anaconda3 | def"
+fi
