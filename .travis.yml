@@ -14,6 +14,5 @@ before_install:
 script:
   - pwd
   - ls
-  - find . -name "setup-this-machine.sh"
-  - cd $(dirname $(find . -name "setup-this-machine.sh"))
-  - ./setup-this-machine.sh dep
+  - cd setup-this-machine
+  - ./setup_this_machine.sh dep
