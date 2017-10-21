@@ -12,4 +12,5 @@ before_install:
   
 
 script:
+  - cd emreay-/utility/setup-this-machine
   - ./setup-this-machine.sh dep
