@@ -12,5 +12,8 @@ before_install:
   
 
 script:
-  - cd emreay-/utility/setup-this-machine
+  - pwd
+  - ls
+  - find . -name "setup-this-machine.sh"
+  - cd $(dirname $(find . -name "setup-this-machine.sh"))
   - ./setup-this-machine.sh dep
