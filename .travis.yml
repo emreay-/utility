@@ -1,4 +1,4 @@
-dist: 
+dist:
   - xenial
 sudo: required
 language:
@@ -9,10 +9,10 @@ cache:
 
 before_install:
   - echo "CI pre install"
-  
+
 
 script:
   - pwd
   - ls
   - cd setup-this-machine
-  - ./setup_this_machine.sh full
+  - ./setup_this_machine.sh dep
