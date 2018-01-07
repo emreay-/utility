@@ -48,7 +48,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output_dir', help='Output directory for the created template', required=True)
     parser.add_argument('-N', '--name', help='Module name', required=True)
-    parser.add_argument(, '--no_test', help='Do not create test file template', action='store_true')
+    parser.add_argument('--no_test', help='Do not create test file template', action='store_true')
     args = parser.parse_args()
 
     return args.output_dir, args.name, args.no_test
