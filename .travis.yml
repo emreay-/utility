@@ -17,4 +17,4 @@ script:
   - cd setup-this-machine
   - ./setup_this_machine.sh dep
   - cd ../script-template-creator/test
-  - nosetests .
+  - python3 test_script_template_creator.py
