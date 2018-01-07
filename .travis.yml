@@ -16,3 +16,5 @@ script:
   - ls
   - cd setup-this-machine
   - ./setup_this_machine.sh dep
+  - cd ../script-template-creator/test
+  - nosetests .
