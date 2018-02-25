@@ -105,7 +105,6 @@ elif [ "$ARG" == "shell" ]; then
 elif [ "$ARG" == "full" ]; then
   install_list UTILITIES
   install_gnome_util
-  customize_shrc
   install_anaconda
   install_atom
   install_vscode
