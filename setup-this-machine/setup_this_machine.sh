@@ -7,8 +7,8 @@ yellow="\033[033m"
 purple="\033[035m"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DEPENDENCIES=(git curl trash-cli terminator caffeine tree sqlitebrowser
-              meld gimp gthumb unzip htop openjdk-8-jre openjdk-8-jdk)
+UTILITIES=(git curl trash-cli terminator caffeine tree sqlitebrowser
+           meld gimp gthumb unzip htop openjdk-8-jre openjdk-8-jdk)
 ARG=$1
 
 printc () {
@@ -17,7 +17,7 @@ printc () {
 
 install () {
     printc $green "\nProcess: Install $1...\n"
-    sudo apt-get install $1
+    sudo apt-get install -y $1
 }
 
 install_list () {
@@ -26,6 +26,14 @@ install_list () {
     do
         install $dep
     done
+}
+
+install_gnome_util () {
+    if [ $(pgrep -f gnome | wc -l) > 0 ]; then
+        printc $yellow "Gnome is detected, proceeding to install its utility tools."
+        install gnome-colors
+        install gnome-tweak-tool
+    fi
 }
 
 install_atom () {
@@ -45,7 +53,7 @@ install_vscode () {
 install_anaconda () {
     printc $yellow "\nProcess: Install Anaconda 3...\n"
     wget -O $HOME/Downloads/anaconda3.sh https://repo.continuum.io/archive/Anaconda3-5.0.0.1-Linux-x86_64.sh
-    bash $HOME/Downloads/anaconda3.sh
+    bash $HOME/Downloads/anaconda3.sh -b
 }
 
 customize_shrc () {
@@ -80,8 +88,9 @@ install_ros () {
     printc $yellow '\ncatkin_ws is created, create and setup the environment manually (run catkin_make, source setup.bash etc.)\n'
 }
 
-if [ "$ARG" == "dep" ]; then
-  install_list DEPENDENCIES
+if [ "$ARG" == "util" ]; then
+  install_list UTILITIES
+  install_gnome_util
 elif [ "$ARG" == "ros" ]; then
   install_ros
 elif [ "$ARG" == "anaconda" ]; then
@@ -91,10 +100,11 @@ elif [ "$ARG" == "atom" ]; then
 elif [ "$ARG" == "vscode" ]; then
   install_vscode
 elif [ "$ARG" == "shell" ]; then
-  install_list DEPENDENCIES
+  install_list UTILITIES
   customize_shrc
 elif [ "$ARG" == "full" ]; then
-  install_list DEPENDENCIES
+  install_list UTILITIES
+  install_gnome_util
   customize_shrc
   install_anaconda
   install_atom
