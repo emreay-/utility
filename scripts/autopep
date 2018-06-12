@@ -1,0 +1,4 @@
+#!/bin/bash
+# -*- coding: utf-8 -*-
+
+find $1 -type f -name "*.py" | xargs -n1 sh -c 'echo Formatting: $0 && autopep8 -i -p10 $0'
